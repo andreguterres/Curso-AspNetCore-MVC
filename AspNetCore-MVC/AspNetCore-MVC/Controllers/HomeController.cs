@@ -13,9 +13,12 @@ namespace AspNetCore_MVC.Controllers
     public class HomeController : Controller
     {
         private IPeopleRepository _peopleRepository;
-        public HomeController()
+        public HomeController(IPeopleRepository repository)
         {
-            _peopleRepository =  new PeopleRepository ("slqserver://178.333");
+            // Método antigo sem injeção de dependencia - Foi passado como parametro a interface 
+            //_peopleRepository =  new PeopleRepository ("slqserver://178.333");
+
+            _peopleRepository = repository;
         }
 
         public IActionResult Index()
