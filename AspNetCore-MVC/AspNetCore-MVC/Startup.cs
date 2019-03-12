@@ -27,7 +27,20 @@ namespace AspNetCore_MVC
         public void ConfigureServices(IServiceCollection services)
         {
             //INJEÇÃO DE DEPENDENCIA.
+            // AddTransient chama a interface "IPeopleRepository"e cria uma nova instancia do que for
+            // passado como parametro dentro do parenteses.
             services.AddTransient<IPeopleRepository>(repository => new PeopleRepository(""));
+
+
+            // services.AddScoped cria nova instancia por requisição, acessa diversas classes conforme for necessária
+            //e usa a mesma instancia para cada chamada do IPeopleRepository.(Por requisição).
+            // Se usuário fizer uma nova chamada ele instaciara novamene.
+            //services.AddScoped<IPeopleRepository>(repository => new PeopleRepository(""));
+
+
+            //Acessará paenas uma classe completa. Vai instanciar e vai usar somente uma classe, mesma instancia.
+            //Serve para classes pesadas.
+            //services.AddSingleton<IPeopleRepository>(repository => new PeopleRepository(""));
 
 
             //services.Configure<CookiePolicyOptions>(options =>
