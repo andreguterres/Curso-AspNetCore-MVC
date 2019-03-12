@@ -58,6 +58,9 @@ namespace AspNetCore_MVC
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // Testando o ambiente que está sendo utilizado.
+            Console.WriteLine($" Banco_Usado {Configuration["ConnectString"]}");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
