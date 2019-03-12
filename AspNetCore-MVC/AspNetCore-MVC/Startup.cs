@@ -29,7 +29,7 @@ namespace AspNetCore_MVC
             //INJEÇÃO DE DEPENDENCIA.
             // AddTransient chama a interface "IPeopleRepository"e cria uma nova instancia do que for
             // passado como parametro dentro do parenteses.
-            services.AddTransient<IPeopleRepository>(repository => new PeopleRepository(""));
+            services.AddTransient<IPeopleRepository>(repository => new PeopleRepository("servidor"));
 
 
             // services.AddScoped cria nova instancia por requisição, acessa diversas classes conforme for necessária
