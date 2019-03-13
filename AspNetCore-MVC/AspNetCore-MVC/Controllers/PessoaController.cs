@@ -16,7 +16,7 @@ namespace AspNetCore_MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save (Pessoa pessoa)
+        public ActionResult Save (PessoaModel pessoa)
         {
             // Condicional usada quando não utiliza notation na model
             //if (pessoa.Id == 0 || string.IsNullOrEmpty(pessoa.Nome) || string.IsNullOrEmpty(pessoa.Sobrenome) || pessoa.Idade == 0 )

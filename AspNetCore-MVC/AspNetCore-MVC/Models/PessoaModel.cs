@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AspNetCore_MVC.Models
 {
-    public class Pessoa
+    public class PessoaModel
     {
         [Required]
         public int Id { get; set; }
