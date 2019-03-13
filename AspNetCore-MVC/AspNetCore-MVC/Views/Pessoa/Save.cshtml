@@ -1,22 +1,38 @@
-﻿@page
-@model AspNetCore_MVC.Views.Pessoa.SaveModel
-@{
-<form action="/Pessoa/Save" method="post">
+﻿@model AspNetCore_MVC.Models.PessoaModel
+
+
+@*//Html Puro*@
+@*<form action="/Pessoa/Save" method="post">*@
+
+    @*//Razor com AspNetCore*@
+<form asp-controller="Pessoa" asp-action="Save" method="post">
 
     Id:
-    <input type="text" name="Id" />
+    <input asp-for"Id" />
+    <span asp-validation-for="Id"></span>
     <br />
 
+    @*HTML Puro*@
+    @*Nome:*@
+    @*<input type="text" name="Nome" />*@
+
+    @*Com Razor*@
     Nome:
-    <input type="text" name="Nome" />
+    <input asp-for"Nome" />
+    <span asp-validation-for="Nome"></span>
+
     <br />
 
     SobreNome:
-    <input type="text" name="Sobrenome" />
+    <input asp-for"Sobrenome" />
+    <span asp-validation-for="Sobrenome"></span>
+
     <br />
 
     Idade:
-    <input type="number" name="Idade" />
+    <input asp-for"Idade" />
+    <span asp-validation-for="Idade"></span>
+
     <br />
 
     <button type="submit" name="salvar" style="width: 20px; height: 20px">Salvar</button>
@@ -27,5 +43,5 @@
     {
            <span>@ViewBag.Validacao</span>
     }
-}
+
 
