@@ -12,26 +12,26 @@ namespace AspNetCore_MVC.Models
 
 
         //Obriga campo
-        [Required]
+        [Required (ErrorMessage = "Id é obrigatório")]
         // Limita dados de entrada entre 20 e 30.
-        [Range(20,30)]
+        [Range(20,30, ErrorMessage = "Número de 20 a 30") ]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Nome é obrigatório")]
 
         //minimo e Máximo de caracteres de entrada.
-        [MinLength(3)]
-        [MaxLength(20)]
+        [MinLength(3, ErrorMessage = "Minimo de 3 caracteres")]
+        [MaxLength(20, ErrorMessage = "Máximo 20 caracteres")]
         public string Nome { get; set; }
 
-        [Required]
-        [MinLength(3)]
-        [MaxLength(20)]
+        [Required(ErrorMessage = "Sobrenome é obrigatório")]
+        [MinLength(3, ErrorMessage = "Minimo de 3 caracteres")]
+        [MaxLength(20, ErrorMessage = "Máximo 20 caracteres")]
         public string Sobrenome { get; set; }
 
         //Pode ser 1 até o limite de caracteres de números inteiros.
-        [Range(1, int.MaxValue)]
-        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "Minimo 1 ano e máximo infinito")]
+        [Required(ErrorMessage = "Idade é obrigatório")]
         public int Idade { get; set; }
 
 
