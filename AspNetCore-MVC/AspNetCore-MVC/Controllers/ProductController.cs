@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AspNetCore_MVC.Controllers
 {
     // Rota adicionada diretamente nas Actions.Nesse exemplo é uma simulação de uma API.
-    [Route("api/product")]
+    //[Route("api/product")]
     public class ProductController : Controller
     {
         #region//validação de da rota. pode escolher o tipo, nº máximo e minimo de caracteres, etc.
