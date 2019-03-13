@@ -20,7 +20,7 @@ namespace AspNetCore_MVC.Controllers
         {
             // Condicional usada quando não utiliza notation na model
             //if (pessoa.Id == 0 || string.IsNullOrEmpty(pessoa.Nome) || string.IsNullOrEmpty(pessoa.Sobrenome) || pessoa.Idade == 0 )
-            if (ModelState.IsValid)    
+            if (!ModelState.IsValid)    
             
                 ViewBag.Validacao = "Preencha o formulário corretamente";
 
