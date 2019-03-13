@@ -48,6 +48,8 @@ namespace AspNetCore_MVC.Controllers
         {
             //Pode customizar o tipo de retorno.
             HttpContext.Response.StatusCode = 404;
+
+            //Retorna texto 
             HttpContext.Response.Headers.Add("ResponseHeader", "Ola Mundo !");
 
             //return "ok";
