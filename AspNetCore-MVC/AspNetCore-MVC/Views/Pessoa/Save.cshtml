@@ -1,0 +1,31 @@
+﻿@page
+@model AspNetCore_MVC.Views.Pessoa.SaveModel
+@{
+<form action="/Pessoa/Save" method="post">
+
+    Id:
+    <input type="text" name="Id" />
+    <br />
+
+    Nome:
+    <input type="text" name="Nome" />
+    <br />
+
+    SobreNome:
+    <input type="text" name="Sobrenome" />
+    <br />
+
+    Idade:
+    <input type="number" name="Idade" />
+    <br />
+
+    <button type="submit" name="salvar" style="width: 20px; height: 20px">Salvar</button>
+
+</form>
+
+    @if (ViewBag.Validacao != null)
+    {
+           <span>@ViewBag.Validacao</span>
+    }
+}
+
