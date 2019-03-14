@@ -15,6 +15,7 @@ namespace AspNetCore_MVC.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Save (PessoaModel pessoa)
         {
