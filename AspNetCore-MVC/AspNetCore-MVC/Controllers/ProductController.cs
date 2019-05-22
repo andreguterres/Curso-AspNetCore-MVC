@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AspNetCore_MVC.Controllers
 {
     // Rota adicionada diretamente nas Actions.Nesse exemplo é uma simulação de uma API.
-    //[Route("api/product")]
+    [Route("api/product")]
     public class ProductController : Controller
     {
         #region//validação de da rota. pode escolher o tipo, nº máximo e minimo de caracteres, etc.
@@ -43,22 +43,25 @@ namespace AspNetCore_MVC.Controllers
 
 
         #region//Pode retornar uma página, um arquivo df, imagem, etc..
-        //public string Get()
+
         public IActionResult Get()
-        {
-            //Pode customizar o tipo de retorno.
-            HttpContext.Response.StatusCode = 404;
+        {     
 
-            //Retorna texto 
-            HttpContext.Response.Headers.Add("ResponseHeader", "Ola Mundo !");
+        //Retorna texto, comentar o  "public IActionResult Get() {" para testar o código
+        //public string Get()
+        //{
+        //    //Pode colocar Status Code nó retorno da página
+        //    //HttpContext.Response.StatusCode = 404;
 
-            //return "ok";
+        //    HttpContext.Response.Headers.Add("ResponseHeader", "Ola Mundo !");
 
-            //Retorna Imagem
-            return File("images/NewTux.svg", "image/svg+xml");
+        //    return "Ok";
 
-        }
-        #endregion
+        //Retorna Imagem
+        return File("images/NewTux.svg", "image/svg+xml");
+
     }
+    #endregion
+}
 }
 

@@ -89,8 +89,7 @@ namespace AspNetCore_MVC
                     defaults: new { controller = "Home", action = "Privacy" }
 
                     );
-            
-        });
+            });
         }
     }
 }
